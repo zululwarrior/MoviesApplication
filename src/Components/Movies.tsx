@@ -5,19 +5,6 @@ import key from '../config';
 import Movie from './Movie';
 import { Result } from '../Types/Result';
 
-interface Date {
-  maximum: string;
-  minumum: string;
-}
-
-interface Movies {
-  page: number;
-  results: Result[];
-  dates: Date;
-  total_pages: number;
-  total_results: number;
-}
-
 const Container = styled.div``;
 
 const Movies: React.FC = () => {
@@ -41,7 +28,7 @@ const Movies: React.FC = () => {
     return (
       <div>
         {movies ? (
-          movies.map((movie, i) => {
+          movies.slice(0, 20).map((movie, i) => {
             return <Movie movie={movie} key={i} />;
           })
         ) : (
