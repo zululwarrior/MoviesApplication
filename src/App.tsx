@@ -6,7 +6,6 @@ function App() {
   return (
     <>
       <Banner />
-      <div className='App'>Hello world</div>
       <Movies />
     </>
   );
