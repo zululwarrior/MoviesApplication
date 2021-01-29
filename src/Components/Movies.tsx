@@ -52,17 +52,20 @@ const Movies: React.FC = () => {
     }
   }, [filter]);
 
-  const handleClick = () => {
-    filter === 'DESC' ? setFilter('ASC') : setFilter('DESC');
+  const setDesc = () => {
+    setFilter('DESC');
+  };
+
+  const setAsc = () => {
+    setFilter('ASC');
   };
 
   if (loading) return <div>loading </div>;
   else {
     return (
       <Container>
-        <button onClick={handleClick}>
-          {filter === 'ASC' ? 'Sort by ascending' : 'Sort by descending'}
-        </button>
+        <button onClick={setAsc}>Sort by ascending</button>
+        <button onClick={setDesc}>Sort by descending</button>
         <MovieContainer>
           {movies ? (
             movies.map((movie, i) => {
