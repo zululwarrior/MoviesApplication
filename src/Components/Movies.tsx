@@ -5,7 +5,12 @@ import key from '../config';
 import Movie from './Movie';
 import { Result } from '../Types/Result';
 
-const Container = styled.div``;
+const Container = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+`;
 
 const Movies: React.FC = () => {
   const [loading, setLoading] = useState(false);
@@ -26,7 +31,7 @@ const Movies: React.FC = () => {
   if (loading) return <div>loading </div>;
   else {
     return (
-      <div>
+      <Container>
         {movies ? (
           movies.slice(0, 20).map((movie, i) => {
             return <Movie movie={movie} key={i} />;
@@ -34,7 +39,7 @@ const Movies: React.FC = () => {
         ) : (
           <div>error</div>
         )}
-      </div>
+      </Container>
     );
   }
 };
