@@ -1,6 +1,6 @@
 # A tiny movies application
 
-Add a `config.js` file with a key:
+Add a `config.js` file in `/src` with an API key:
 
 ```javascript
 const key = 'YOUR_KEY';
