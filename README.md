@@ -1,4 +1,4 @@
-#A tiny movies application
+# A tiny movies application
 
 Add a `config.js` file with a key:
 
